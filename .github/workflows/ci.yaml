@@ -17,5 +17,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Resolve Swift dependencies
         run: swift package resolve
-      - name: Build & Test
+      - name: Build
+        run: swift build -c release
+      - name: Test
         run: swift test --enable-test-discovery --parallel
